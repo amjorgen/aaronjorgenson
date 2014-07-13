@@ -3,6 +3,9 @@
 }
 
 .face {
-	max-height: 220px;
 	margin-top: 34px;
+}
+
+.logo {
+	max-height: 50px;
 }

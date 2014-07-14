@@ -3,6 +3,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
+	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+#jumbotron-text {
+	margin-top: 25px;
 }
 
 .face {
@@ -31,4 +36,13 @@ hr {
 	background-color: #d9d9d9;
 	height: 1px;
 
+}
+
+span {
+	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+#button {
+	margin-top: 13px;
+	font-family: Helvetica, Arial, sans-serif !important;
 }

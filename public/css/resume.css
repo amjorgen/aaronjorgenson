@@ -24,5 +24,11 @@
 }
 	
 body {
-	background-color: #e3e3e3
+	background-color: #ededed
+}
+
+hr {
+	background-color: #d9d9d9;
+	height: 1px;
+
 }

@@ -1,5 +1,8 @@
 .custom-jumbotron {
-	background-color: #DBD5CA !important;
+	background-image: url('../images/jumbotron.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
 }
 
 .face {
@@ -20,3 +23,6 @@
 	margin-left: 55px;
 }
 	
+body {
+	background-color: #e3e3e3
+}

@@ -29,7 +29,7 @@
 }
 	
 body {
-	background-color: #ededed
+	background-color: #ededed;
 }
 
 hr {
@@ -45,4 +45,10 @@ span {
 #button {
 	margin-top: 13px;
 	font-family: Helvetica, Arial, sans-serif;
+}
+
+.prof-background {
+	background-color: #d9d9d9;
+	margin: 0 !important;
+	width: 100%;
 }

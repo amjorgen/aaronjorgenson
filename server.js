@@ -1,15 +1,16 @@
 var express = require('express');
 var path = require('path');
-var app = express();
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var app = express();
+
 // Database
 
 mongoose.connect('mongodb://localhost/contacts');
 
 //Configuration
 
-	app.use(bodyParser.json());
+	app.use(bodyParser()); //Modified the bodyParser.json to bodyParser().
 	app.use(express.static(path.join(__dirname, '/public')));
 
 // jQuery.post("/api/contacts", {
@@ -41,7 +42,7 @@ app.get('/', function(req, res){
 	res.sendfile('./public/views/resume.html');
 });
 app.get('/api/contacts', function(req, res) {
-	return ContactModel.find(function (err, contacts) {
+	return mongoose.model('ContactModel').find(function (err, contacts) { //Modified the return element on the 'ContactModel' in ordered the test mongoose.model('ContactModel")')
 		if (!err) {
 			return res.send(contacts);
 		} else {

@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost/contacts');
 
 //Configuration
 
-	app.use(bodyParser()); //Modified the bodyParser.json to bodyParser().
+	app.use(bodyParser().json); //Modified the bodyParser.json to bodyParser().
 	app.use(express.static(path.join(__dirname, '/public')));
 
 // jQuery.post("/api/contacts", {
@@ -42,7 +42,7 @@ app.get('/', function(req, res){
 	res.sendfile('./public/views/resume.html');
 });
 app.get('/api/contacts', function(req, res) {
-	return mongoose.model('ContactModel').find(function (err, contacts) { //Modified the return element on the 'ContactModel' in ordered the test mongoose.model('ContactModel")')
+	return ('ContactModel').find(function (err, contacts) { //Modified the return element on the 'ContactModel' in ordered the test mongoose.model('ContactModel")')
 		if (!err) {
 			return res.send(contacts);
 		} else {

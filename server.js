@@ -1,17 +1,16 @@
 var express = require('express');
 var path = require('path');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
 var app = express();
-
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser')
 // Database
 
 mongoose.connect('mongodb://localhost/contacts');
 
 //Configuration
 
-	app.use(bodyParser().json); //Modified the bodyParser.json to bodyParser().
-	app.use(express.static(path.join(__dirname, '/public')));
+  app.use(bodyParser.json());
+  app.use(express.static(path.join(__dirname, '/public')));
 
 // jQuery.post("/api/contacts", {
 //   "name": "Aaron",  
@@ -26,10 +25,10 @@ mongoose.connect('mongodb://localhost/contacts');
 
 var Schema = mongoose.Schema;
 var Contact = new Schema({
-	name: {type: String, required: true},
-	company: {type: String, required: false},
-	email: {type: String, required: true},
-	comment: {type: String, required: true}
+  name: {type: String, required: true},
+  company: {type: String, required: false},
+  email: {type: String, required: true},
+  comment: {type: String, required: true}
 });
 var ContactModel = mongoose.model('Contact', Contact);
 
@@ -39,16 +38,16 @@ app.use('/public/css', express.static(path.join(__dirname, '/public/css')));
 app.use('/public/js', express.static(path.join(__dirname, '/public/js')));
 app.use('/public/images', express.static(path.join(__dirname, '/public/images')));
 app.get('/', function(req, res){
-	res.sendfile('./public/views/resume.html');
+  res.sendfile('./public/views/resume.html');
 });
 app.get('/api/contacts', function(req, res) {
-	return ('ContactModel').find(function (err, contacts) { //Modified the return element on the 'ContactModel' in ordered the test mongoose.model('ContactModel")')
-		if (!err) {
-			return res.send(contacts);
-		} else {
-			return console.log(err);
-		}
-	});
+  return ContactModel.find(function (err, contacts) {
+    if (!err) {
+      return res.send(contacts);
+    } else {
+      return console.log(err);
+    }
+  });
 });
 
 app.post('/api/contacts', function (req, res){

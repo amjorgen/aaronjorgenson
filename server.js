@@ -2,15 +2,20 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var mongoose = require('mongoose');
+var logger = require('morgan');
 var bodyParser = require('body-parser')
 // Database
 
-mongoose.connect('mongodb://localhost/contacts');
+// In mongo shell create database called aaronjorgenson
+// then add a record to the contacts collection in that db
+// browse to localhost:3000/api/contacts and you should see
+// the record.
+mongoose.connect('mongodb://localhost/aaronjorgenson');
 
 //Configuration
-
-  app.use(bodyParser.json());
-  app.use(express.static(path.join(__dirname, '/public')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/public')));
 
 // jQuery.post("/api/contacts", {
 //   "name": "Aaron",  

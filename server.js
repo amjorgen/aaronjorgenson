@@ -60,6 +60,7 @@ app.post('/api/contacts', function (req, res){
       return console.log(err);
     }
   });
+  res.sendfile('./public/views/resume.html');
 });
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);

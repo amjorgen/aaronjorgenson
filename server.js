@@ -64,6 +64,6 @@ app.post('/api/contacts', function (req, res){
 });
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
-httpServer.listen(8020);
+httpServer.listen(80);
 // httpsServer.listen(8081);
 console.log("Server is running");

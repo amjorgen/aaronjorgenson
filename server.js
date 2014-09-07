@@ -2,12 +2,12 @@ var path = require('path');
 var mongoose = require('mongoose');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var fs = require('fs');
+// var fs = require('fs');
 var http = require('http');
-var https = require('https');
-var privateKey  = fs.readFileSync('ssl/privatekey.key', 'utf8');
-var certificate = fs.readFileSync('ssl/cert.crt', 'utf8')
-var credentials = {key: privateKey, cert: certificate};
+// var https = require('https');
+// var privateKey  = fs.readFileSync('ssl/privatekey.key', 'utf8');
+// var certificate = fs.readFileSync('ssl/cert.crt', 'utf8')
+// var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
 var app = express();
 // Database
@@ -63,7 +63,7 @@ app.post('/api/contacts', function (req, res){
   return res.send(contact);
 });
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// var httpsServer = https.createServer(credentials, app);
 httpServer.listen(8080);
 httpsServer.listen(8081);
 console.log("Server is running");

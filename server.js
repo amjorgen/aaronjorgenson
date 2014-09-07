@@ -60,7 +60,6 @@ app.post('/api/contacts', function (req, res){
       return console.log(err);
     }
   });
-  return res.send(contact);
 });
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);

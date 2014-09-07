@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var privateKey  = fs.readFileSync('../ssl/keys/a3092_ca91d_19d9a274f0aefdc0380ca3b7febdc9c6.key', 'utf8');
-var certificate = fs.readFileSync('../ssl/certs/www_aaronjorgenson_com_a3092_ca91d_1440460799_6a55eca47de16f07754d54cb85de222a.crt', 'utf8')
+var privateKey  = fs.readFileSync('ssl/privatekey.key', 'utf8');
+var certificate = fs.readFileSync('ssl/cert.crt', 'utf8')
 var credentials = {key: privateKey, cert: certificate};
 var express = require('express');
 var app = express();
@@ -64,6 +64,6 @@ app.post('/api/contacts', function (req, res){
 });
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
-httpServer.listen(80);
-httpsServer.listen(443);
+httpServer.listen(8080);
+httpsServer.listen(8081);
 console.log("Server is running");

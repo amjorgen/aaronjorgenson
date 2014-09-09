@@ -61,3 +61,6 @@ span {
 #links {
 	text-decoration: none;
 }
+.modal-dialog {
+	padding-top: 12%;
+}

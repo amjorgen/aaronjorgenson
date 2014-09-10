@@ -32,6 +32,7 @@ var ContactModel = mongoose.model('Contact', Contact);
 app.use('/public/css', express.static(path.join(__dirname, '/public/css')));
 app.use('/public/js', express.static(path.join(__dirname, '/public/js')));
 app.use('/public/images', express.static(path.join(__dirname, '/public/images')));
+app.use('/public/files', express.static(path.join(__dirname, '/public/files')));
 app.get('/', function(req, res){
   res.sendfile('./public/views/resume.html');
 });

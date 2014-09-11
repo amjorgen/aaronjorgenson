@@ -42,6 +42,10 @@ span {
 	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
 }
 
+span li {
+	list-style-type: none;		
+}
+
 #button {
 	margin-top: 23px;
 	font-family: Helvetica, Arial, sans-serif;

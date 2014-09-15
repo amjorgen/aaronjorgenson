@@ -45,6 +45,10 @@ app.get('/api/contacts', function(req, res) {
     }
   });
 });
+//Attempting to create GET request for query string
+app.get('/api/query', function(req, res){
+  res.send('id: ' + req.query.id);
+});
 
 app.post('/api/contacts', function (req, res){
   var contact;

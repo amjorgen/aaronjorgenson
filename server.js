@@ -36,15 +36,15 @@ app.use('/public/files', express.static(path.join(__dirname, '/public/files')));
 app.get('/', function(req, res){
   res.sendfile('./public/views/resume.html');
 });
-app.get('/api/contacts', function(req, res) {
-  return ContactModel.find(function (err, contacts) {
-    if (!err) {
-      return res.send(contacts);
-    } else {
-      return console.log(err);
-    }
-  });
-});
+// app.get('/api/contacts', function(req, res) {
+//   return ContactModel.find(function (err, contacts) {
+//     if (!err) {
+//       return res.send(contacts);
+//     } else {
+//       return console.log(err);
+//     }
+//   });
+// });
 
 app.post('/api/contacts', function (req, res){
   var contact;
